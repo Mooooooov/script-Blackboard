@@ -1,13 +1,10 @@
 const puppeteer = require('puppeteer');
 const fs = require('fs').promises;
 const { criaTarefa } = require('../tarefas')
-const dotenv = require('dotenv').config()
 
 
 const url = "https://iesb.blackboard.com/learn/api/v1/courses/_541803_1/contents/_1331028_1/children?@view=Summary&expand=assignedGroups,selfEnrollmentGroups.group,gradebookCategory&limit=10"
 let tarefasProbabilidade = []
-const login = process.env.MATRICULA;
-const senha = process.env.SENHA;
 
 
 async function start() {

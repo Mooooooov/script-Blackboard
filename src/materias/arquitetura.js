@@ -1,13 +1,11 @@
-const url = "https://iesb.blackboard.com/learn/api/v1/courses/_540990_1/contents/INTERACTIVE/children?@view=Summary&expand=assignedGroups,selfEnrollmentGroups.group,gradebookCategory&limit=0"
 const puppeteer = require('puppeteer');
 const fs = require('fs').promises;
 const { criaTarefa } = require('../tarefas')
-const dotenv = require('dotenv').config()
 
 
+const url = "https://iesb.blackboard.com/learn/api/v1/courses/_540990_1/contents/INTERACTIVE/children?@view=Summary&expand=assignedGroups,selfEnrollmentGroups.group,gradebookCategory&limit=0"
 let tarefasProbabilidade = []
-const login = process.env.MATRICULA;
-const senha = process.env.SENHA;
+
 
 
 async function start() {

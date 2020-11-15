@@ -1,11 +1,9 @@
 const puppeteer = require('puppeteer');
 const fs = require('fs').promises;
-const { criaTarefa } = require('../../tarefas')
-const dotenv = require('dotenv').config()
+const { criaTarefa } = require('../tarefas')
 
-
-const login = process.env.MATRICULA;
-const senha = process.env.SENHA;
+let tarefasProbabilidade = []
+const url = "https://iesb.blackboard.com/learn/api/v1/courses/_540405_1/contents/_1365924_1/children?@view=Summary&expand=assignedGroups,selfEnrollmentGroups.group,gradebookCategory&limit=10"
 
 
 async function start() {
@@ -46,12 +44,10 @@ async function start() {
 
 
 
-    const url = "https://iesb.blackboard.com/learn/api/v1/courses/_540405_1/contents/_1365924_1/children?@view=Summary&expand=assignedGroups,selfEnrollmentGroups.group,gradebookCategory&limit=10"
     await api.goto(url)
 
     let content = await api.evaluate(() => JSON.parse(document.querySelector("body").innerText))
 
-    let tarefasProbabilidade = []
 
     content.results.forEach((result, index) => {
         tarefasProbabilidade.push(
