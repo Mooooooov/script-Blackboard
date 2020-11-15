@@ -1,6 +1,6 @@
 const puppeteer = require('puppeteer');
 const fs = require('fs').promises;
-const { criaTarefa } = require('./tarefas')
+const { criaTarefa } = require('../tarefas')
 const dotenv = require('dotenv').config()
 
 
@@ -31,7 +31,7 @@ async function start() {
     });
 
 
-    const cookiesString = await fs.readFile('./cookies.json');
+    const cookiesString = await fs.readFile('secret/cookies.json');
     const cookies = JSON.parse(cookiesString);
     await page.setCookie(...cookies);
 

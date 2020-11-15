@@ -42,7 +42,7 @@ async function start() {
     await page.waitFor(10000)
 
     const cookies = await page.cookies();
-    await fs.writeFile('./cookies.json', JSON.stringify(cookies, null, 2));
+    await fs.writeFile('secret/cookies.json', JSON.stringify(cookies, null, 2));
 
     await browser.close()
 }
