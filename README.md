@@ -1,2 +1,2 @@
-# script-Blackboard
-Script para pegar as tarefas da minha faculdade e mandar no WhatsApp
+# scriptBlackboard
+Script para pegar todas as tarefas da plataforma da minha faculdade e postar no WhatsApp

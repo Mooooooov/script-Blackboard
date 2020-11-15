@@ -1,0 +1,1 @@
+const url = "https://iesb.blackboard.com/learn/api/v1/courses/_540387_1/contents/ROOT/children?@view=Summary&expand=assignedGroups,selfEnrollmentGroups.group,gradebookCategory&limit=10"
