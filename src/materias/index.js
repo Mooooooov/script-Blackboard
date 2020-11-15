@@ -1,6 +1,6 @@
 const puppeteer = require('puppeteer');
 const fs = require('fs').promises;
-const { criaTarefa } = require('../tarefas')
+const { criaTarefa } = require('../../tarefas')
 const dotenv = require('dotenv').config()
 
 
