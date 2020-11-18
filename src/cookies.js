@@ -9,7 +9,7 @@ const senha = process.env.SENHA;
 
 async function start() {
     const browser = await puppeteer.launch({
-        headless: false,
+        headless: true,
         args: ['--disable-notifications', '--use-fake-ui-for-media-stream'],
         audio: true,
         video: true,
