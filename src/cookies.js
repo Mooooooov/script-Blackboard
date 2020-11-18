@@ -31,11 +31,16 @@ async function start() {
         timeout: 0,
     });
 
+
+    await page.waitForSelector('#agree_button')
     await page.click('#agree_button')
+    await page.waitForSelector('#user_id')
     await page.click('#user_id')
     await page.keyboard.type(login)
+    await page.waitForSelector('#password')
     await page.click('#password')
     await page.keyboard.type(senha)
+    await page.waitForSelector('#entry-login')
     await page.click('#entry-login')
 
 
