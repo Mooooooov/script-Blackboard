@@ -10,7 +10,14 @@ const cursosList = {
   }
 
 
-let criaTarefa = (id, title, exercice, dueDate) => ({
+let tarefa = (id, title, exercice, dueDate) => ({
+    id: id,
+    curseTitle: typeof cursosList[title] != 'undefined' ? cursosList[title] : title ,
+    exercice: exercice,
+    dueDate: formataData(dueDate)
+})
+
+let forum = (id, title, exercice, dueDate) => ({
     id: id,
     curseTitle: typeof cursosList[title] != 'undefined' ? cursosList[title] : title ,
     exercice: exercice,
@@ -18,6 +25,7 @@ let criaTarefa = (id, title, exercice, dueDate) => ({
 })
 
 module.exports = {
-    criaTarefa: criaTarefa,
+    tarefa: tarefa,
+    forum: forum,
     formataData: formataData
 }

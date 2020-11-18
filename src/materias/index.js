@@ -1,6 +1,6 @@
 const puppeteer = require('puppeteer');
 const fs = require('fs').promises;
-const { criaTarefa } = require('../tarefas')
+const { tarefa, forum } = require('../tarefas')
 
 let tarefasProbabilidade = []
 const url = "https://iesb.blackboard.com/learn/api/v1/courses/_540405_1/contents/_1365924_1/children?@view=Summary&expand=assignedGroups,selfEnrollmentGroups.group,gradebookCategory&limit=10"
@@ -51,7 +51,7 @@ async function start() {
 
     content.results.forEach((result, index) => {
         tarefasProbabilidade.push(
-            criaTarefa(
+            tarefa(
                 index,
                 result.contentDetail["resource/x-bb-asmt-test-link"].test.gradingColumn.courseId, // 
                 result.title,

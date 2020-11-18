@@ -1,6 +1,6 @@
 const puppeteer = require('puppeteer');
 const fs = require('fs').promises;
-const { criaTarefa } = require('../tarefas')
+const { tarefa } = require('../tarefas')
 
 
 const url = "https://iesb.blackboard.com/learn/api/v1/courses/_540990_1/contents/INTERACTIVE/children?@view=Summary&expand=assignedGroups,selfEnrollmentGroups.group,gradebookCategory&limit=0"
@@ -45,21 +45,19 @@ async function start() {
     let content = await api.evaluate(() => JSON.parse(document.querySelector("body").innerText))
 
 
-    function verificaForum() {
-        content.results.forEach(result => {
-            if (result.genericReadOnlyData.dueDate !== null) {
-                result.title
-            }
-        })
-    }
-
-    console.log(verificaForum());
+    // function verificaForum() {
+    //     content.results.forEach(result => {
+    //         if (result.genericReadOnlyData.dueDate !== null) {
+    //             result.title
+    //         }
+    //     })
+    // }
 
 
 
     content.results.forEach((result, index) => {
         tarefasProbabilidade.push(
-            criaTarefa(
+            tarefa(
                 index,
                 result.courseId, // 
                 verificaForum(),
